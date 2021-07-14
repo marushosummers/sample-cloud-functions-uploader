@@ -19,6 +19,7 @@ gcloud config set project <Yout Project>
 
 ```
 cd functions
-gcloud functions deploy <function_name> --entry-point <function> --runtime python37 --timeout=300 --trigger-http --allow-unauthenticated
+gcloud functions deploy data-uploader --entry-point data_uploader --runtime python37 --trigger-http
+gcloud scheduler jobs create http daily-data-uploader --schedule="every 24 hours" --uri=<ENDPOINT> --oidc-service-account-email=<serviceAccountEmail>
 ```
 
