@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# ignore deploy code
+deploy
+.env.*
+!.env.sample.yml
+
+.DS_Store

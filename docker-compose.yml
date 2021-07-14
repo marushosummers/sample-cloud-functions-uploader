@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+  pythonenv:
+    container_name: pythonenv
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/app/
+    ports:
+      - 5000:5000
+    environment:
+      TZ: Asia/Tokyo
+      GOOGLE_APPLICATION_CREDENTIALS: /root/.config/gcloud/application_default_credentials.json
+    tty: true
