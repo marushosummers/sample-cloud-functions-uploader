@@ -27,8 +27,8 @@ def getFileName(time: datetime) -> str:
 def fetcher(url: str) -> str:
     """fetch api data and return json string
     """
-    print(f"Access: {API_ENDPOINT}")
-    response = requests.get(API_ENDPOINT)
+    print(f"Access: {url}")
+    response = requests.get(url)
 
     # Raise error if status code is not 200
     response.raise_for_status()
